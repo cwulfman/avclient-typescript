@@ -12,8 +12,8 @@ export class ClientComponent implements OnInit {
 
     constructor(private avclientService: AvclientService) { }
     
-    initialize(bboard: any): void {
-	this.avclientService.initialize(bboard)
+    initialize(): void {
+	this.avclientService.initialize()
     }
 
     ngOnInit(): void {
