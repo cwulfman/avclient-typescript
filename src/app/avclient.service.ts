@@ -10,4 +10,5 @@ export class AvclientService {
 
     foo(): StatusCode {
 	return StatusCode.NetworkError;
+    }
 }
