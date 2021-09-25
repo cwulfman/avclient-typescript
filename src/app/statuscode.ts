@@ -3,6 +3,9 @@
  */
 
 export enum StatusCode {
+    Initialized = 'initialized',
+    Uninitialized = 'uninitialized',
+    OK = 'ok',
     VoterRecordNotFound = 'voter record not found',
     NetworkError = 'network code',
     CallOutOfOrderError = 'call out of order error',

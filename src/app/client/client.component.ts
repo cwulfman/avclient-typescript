@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Avclient } from '../avclient';
+import { AvclientService } from '../avclient.service';
+
 
 @Component({
   selector: 'app-client',
@@ -9,13 +10,15 @@ import { Avclient } from '../avclient';
 
 export class ClientComponent implements OnInit {
 
-    avclient: Avclient = {
-	status: 'made',
-    };
-
-    constructor() { }
+    constructor(private avclientService: AvclientService) { }
     
+    initialize(bboard: any): void {
+	this.avclientService.initialize(bboard)
+    }
+
     ngOnInit(): void {
     }
+
+    status():string { return this.avclientService.status()}
     
 }
