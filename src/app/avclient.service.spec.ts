@@ -1,16 +1,21 @@
 import { TestBed } from '@angular/core/testing';
-
 import { AvclientService } from './avclient.service';
+import { StatusCode } from './statuscode';
+
 
 describe('AvclientService', () => {
-  let service: AvclientService;
+    let service: AvclientService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(AvclientService);
-  });
+    beforeEach(async () => {
+	await TestBed.configureTestingModule({
+	    declarations: [ AvclientService ],
+	    providers: [AvclientService],
+	}).compileComponents();
+	service = TestBed.inject(AvclientService);
+    });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+    
+    it('should be created', () => {
+	expect(service).toBeTruthy();
+    });
 });

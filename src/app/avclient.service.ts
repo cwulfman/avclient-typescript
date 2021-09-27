@@ -3,6 +3,7 @@ import { StatusCode } from './statuscode';
 import { Receipt } from './receipt';
 import { CastVoteRecord } from './castvoterecord';
 import { Affidavit } from './affidavit'
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class AvclientService {
     _status: StatusCode = StatusCode.Uninitialized;
     _cachedAccessCode: any;
 
-    constructor() { }
+    constructor(bulletinBoardURL: string) { }
 
     initialize(): void {
 	this._status = StatusCode.Initialized
@@ -59,7 +60,7 @@ export class AvclientService {
 
     registerVoter() {}
 
-    requestAccessCode(opaqueVoterId: string, email: string): Promise<void> {
+    requestAccessCode(opaqueVoterId: string): Promise<void> {
 	return new Promise((resolve, reject) => {
 	    switch(opaqueVoterId) {
 		case '00000':
@@ -111,7 +112,7 @@ export class AvclientService {
 	});
     }
 
-    validateAccessCode(code: string): Promise<void> {
+    validateAccessCode(code: string | string[], email: string): Promise<void> {
 	return new Promise((resolve, reject) => {
 	    switch(code) {
 		case '00002':

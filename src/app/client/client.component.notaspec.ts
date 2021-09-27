@@ -14,7 +14,7 @@ describe('ClientComponent', () => {
 	    .compileComponents();
     });
     
-    it('should create', () => {
+    it('should create a ClientComponent', () => {
 	const fixture = TestBed.createComponent(ClientComponent);
 	const component = fixture.componentInstance;
 	fixture.detectChanges();
